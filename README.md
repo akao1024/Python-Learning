@@ -1,2 +1,3 @@
 # Python-Learning
-Python Learning from 0 to 1
+
+These are the notes I took when learning Python from Datacamp
