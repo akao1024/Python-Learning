@@ -1,4 +1,4 @@
-# Python Learning
+# Variables and Type
 
 1. Variable
 - Assignment
