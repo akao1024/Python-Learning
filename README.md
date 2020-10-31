@@ -1,17 +1,34 @@
-# Introduction to Python
 
-## Four Topics Will Be Included Within This Course
+# Hello Python!
 
-1. Python Basics
-- Basic concepts about Python
-- Acquaint myself with basic python datatype
+1. IPython Shell
 
-2. Python Lists
-- Store, access, and manipulate a chunk of data in python
+Mostly used to execute commands
 
-3. Functions and Packages
-- First time to use functions, methods, and packages in python
+2. Python Script
 
-4. NumPy
-- Get my first experience with python package through NumPy
+- Text files -.py
+- List of Python Commands
+
+3. Any Comments
+
+Used # to add comments within python interface
+Codes added behind # will not be run by as Python code, so it will not influence your result
+
+# This is a comment if you run on Python
+
+4. Python as a calculator
+
+- print(3*5) --> 15
+- print(3+5) --> 8
+- print(3-5) --> -2
+- print(3/5) --> 0.6
+
+Exponential: 
+print(4**2) --> 16
+Modulo:
+p.s. The operator returns the remainder of the division of the number to the left by the number on its right
+print(18 % 7) --> 4
+print(11 % 2) --> 1
+
 
