@@ -1,18 +1,25 @@
-# Intermediate Python
+# Basic Plots with Matplotlib
 
-Learn to visualize real data with Matplotlib's functions and get acquainted with data structures such as the dictionary and the pandas DataFrame. After covering key concepts such as boolean logic, control flow, and loops in Python, you'll be ready to blend together everything you've learned to solve a case study using hacker statistics.
+1. Visualization
+2. Dat Structure
+3. Control Structures
 
-Five Topics Will Be Covered within This Course
+- Matplotlib
+import matplotlib.pyplot as plt
+year = [1950, 1970, 1990, 2010]
+pop = [2.519, 3.692, 5.263, 6.972]
+plt.plot(year, pop)  ---> We draw a linear diagram as code
+plt.show()  ---> Use it to display the chart
 
-1. Matplotlib
+- Scatter Plot
+import matplotlib.pyplot as plt
+year = [1950, 1970, 1990, 2010]
+pop = [2.519, 3.692, 5.263, 6.972]
+plt.scatter(year, pop)  ---> We draw a linear diagram as code
+plt.show()  ---> Use it to display the chart
 
-2. Dictionaries & Pandas
 
-3. Logic, Control Flow & Filtering
 
-4. Loops
-
-5. Case Study: Hacker Statistics
 
 
 
