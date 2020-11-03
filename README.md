@@ -1,17 +1,19 @@
-# Introduction to Python
+# Intermediate Python
 
-## Four Topics Will Be Included Within This Course
+Learn to visualize real data with Matplotlib's functions and get acquainted with data structures such as the dictionary and the pandas DataFrame. After covering key concepts such as boolean logic, control flow, and loops in Python, you'll be ready to blend together everything you've learned to solve a case study using hacker statistics.
 
-1. Python Basics
-- Basic concepts about Python
-- Acquaint myself with basic python datatype
+Five Topics Will Be Covered within This Course
 
-2. Python Lists
-- Store, access, and manipulate a chunk of data in python
+1. Matplotlib
 
-3. Functions and Packages
-- First time to use functions, methods, and packages in python
+2. Dictionaries & Pandas
 
-4. NumPy
-- Get my first experience with python package through NumPy
+3. Logic, Control Flow & Filtering
+
+4. Loops
+
+5. Case Study: Hacker Statistics
+
+
+
 
