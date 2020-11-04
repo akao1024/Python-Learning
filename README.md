@@ -1,11 +1,25 @@
 # Dictionaries
 
-We used to store the data through list, but it's kind of inconvenient when we want to extract the corresponding data within it.
-Therefore, now we have dictionaries to help us store the data, so we have a more convenient when we need to extract the data
+- Recap
+Keys have to be immutable values
+{0:"hello", True:"dear", "two":"world"}
+---> {0:"hello", True:"dear", "two":"world"}
 
-- world = {"afghanistan":30.55, "albania":2.77, "algeria":39.21}
-print(world["albania"]) ---> 2.77
+Immutavle values are like Booleans, Integers, or Stings, which are the values dont change much
 
+{["just","to","eat"]:"value"}
+---> TypeError
+
+Since the value of list changes often, so list is not the immutable value we refer to at here.
+
+- Dictionary
+1. Add value
+world = {'afghanistan': 30.55, 'albania': 2.81,'algeria': 39.21}
+world['sealand'] = 0.00027
+print(world) ---> {'afghanistan': 30.55, 'albania': 2.81,'algeria': 39.21, 'sealand': 0.00027}
+
+2. Remove
+del(world['sealand'])
 
 
 
