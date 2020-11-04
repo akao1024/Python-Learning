@@ -1,22 +1,18 @@
-# Basic Plots with Matplotlib
+# Histogram
+* Explore Dataset
+* Get idea about distribution
 
-1. Visualization
-2. Dat Structure
-3. Control Structures
+impot matplotlib.pyplot as plt
+help(plt.hist)
+Help on function hist in module matplotlib.pyplot:  hist(x, bins=10, range=None, normed=False, weights=None,  cumulative=False, bottom=None, histtype='bar', align='mid',  orientation='vertical', rwidth=None, log=False, color=None,  label=None, stacked=False, hold=None, data=None, **kwargs)      
+Plot a histogram.      
+Compute and draw the histogram of *x*. The return value is a      tuple (*n*, *bins*, *patches*) or ([*n0*, *n1*, ...],      *bins*, [*patches0*, *patches1*,...]) if the input contains      multiple data.
 
-- Matplotlib
-import matplotlib.pyplot as plt
-year = [1950, 1970, 1990, 2010]
-pop = [2.519, 3.692, 5.263, 6.972]
-plt.plot(year, pop)  ---> We draw a linear diagram as code
-plt.show()  ---> Use it to display the chart
+For the argument x, we should give the function a list of value for the diagram reference
+Second thing about out argument on bins, if we dont give the exact number to the bins, the default numbers for bins will be 10
 
-- Scatter Plot
-import matplotlib.pyplot as plt
-year = [1950, 1970, 1990, 2010]
-pop = [2.519, 3.692, 5.263, 6.972]
-plt.scatter(year, pop)  ---> We draw a linear diagram as code
-plt.show()  ---> Use it to display the chart
+
+
 
 
 
