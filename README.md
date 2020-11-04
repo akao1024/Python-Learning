@@ -2,12 +2,12 @@
 * Explore Dataset
 * Get idea about distribution
 
-- Data Visualization
-* Different plot types
-* Many Customizations
-- Choice Depends On
-* Data
-* Story you want to tell
+* Data Visualization
+1. Different plot types
+2. Many Customizations
+* Choice Depends On
+1. Data
+2. Story you want to tell
 
 Will brief as images uploaded
 
