@@ -1,63 +1,68 @@
-# If & elif & else
+# Filtering Pandas and DataFrames
 
-Conditional Statement
-if, elif, else
+Will insert related curriculum resources within the repository
 
-- Only if
-if condition :
-  expression
+we still use brics as our example on this course
 
-z = 4
-if z % 2 == 0 :
-  print("z is even")
----> z is even
+import pandas as pd
+brics = pd.read_csv("path/to/brics.csv", index_col=0)
+brics 
+    country       Capital    area   population
+BR  Brazil        Brasilia   8.516  200.40
+RU  Russia        Moscos     17.100 143.50
+IN  India         New Dehli  3.286  1252.00
+CH  China         Beijing    9.597  1357.00
+SA  South Africa  Pretoria   1.221  52.98
 
 
-z = 4
-if z % 2 == 0 :
-  print("checking "+str(z))
-  print("z is even")
----> checking 4
----> z is even
+- Goal
+1. Select countries with area over 8 million km2
+2. 3 steps
+a. Select the area column
+b. Do comparison on area column
+c. Use result to select country
 
-z = 5
-if z % 2 == 0 :
-  print("checking "+str(z))
-  print("z is even")
----> since the condition is false, so there is no comeout
+- Step1: Get Column
+brics["area"]
+BR  8.516  
+RU  17.100 
+IN  3.286  
+CH  9.597  
+SA  1.221  
+Name: area, dtype: float64
 
-- If with else
-if condition :
-  expression
-else :
-  expression
+- Step2: Compare
+brics["area"] > 8
+BR  True  
+RU  True 
+IN  False  
+CH  True  
+SA  False  
+Name: area, dtype: bool
 
-z = 5
-if z % 2 == 0 :
-  print("z is even")
-else :
-  print("z is odd")
+is_huge = brics["area"] > 8
 
----> z is odd
+- Step3: Subset DF
 
-- If with elif, and else
+brics[is_huge]
+    country       Capital    area   population
+BR  Brazil        Brasilia   8.516  200.40
+RU  Russia        Moscos     17.100 143.50
+CH  China         Beijing    9.597  1357.00
 
-if condition :
-  expression
-elif condition:
-  expression
-else :
-  expression
+- Summary:
+is_huge = brics["area"] > 8
+brics[is_huge] or brics[brics["area"] > 8]
 
-z = 3
+- Boolean Operators
+import numpy as np
+np.logical_and(brics["area"] > 8, brics["area"] < 10)
+brics[np.logical_and(brics["area"] > 8, brics["area"] < 10)]
 
-if z % 2 == 0 :
-  print("z is divisible by 2")
-elif z % 3 == 0:
-  print("z is divisible by 3")
-else:
-  print("z is neither divisible by 2 nor by 3")
+    country       Capital    area   population
+BR  Brazil        Brasilia   8.516  200.40
+CH  China         Beijing    9.597  1357.00
 
----> z is divisible by 3
+
 
 
