@@ -1,28 +1,63 @@
-# Boolean Operators w/ Numpy
+# If & elif & else
 
-And
-- True and True ---> True
-- True and False ---> False
-- False and True ---> False
-- False and False ---> False
+Conditional Statement
+if, elif, else
 
-Or
-- True or True ---> True
-- True or False ---> True
-- False or True ---> True
-- False or False ---> False
+- Only if
+if condition :
+  expression
 
-Not
-- not Ture ---> False
-- not False ---> True
+z = 4
+if z % 2 == 0 :
+  print("z is even")
+---> z is even
 
-Numpy
-print(bmi) ---> array([21.852, 20.975, 21.75, 24.747, 21.441])
-bmi > 21 and bmi < 22 ---> Value Error
 
-- logical_and()
-- logical_or()
-- logical_not()
+z = 4
+if z % 2 == 0 :
+  print("checking "+str(z))
+  print("z is even")
+---> checking 4
+---> z is even
 
-np.logical_and(bmi>21, bmi<22) ---> array([True, False, True, False, True])
-bmi[np.logical_and(bmi>21, bmi<22)] ---> array([21.852, 21.75, 21.441])
+z = 5
+if z % 2 == 0 :
+  print("checking "+str(z))
+  print("z is even")
+---> since the condition is false, so there is no comeout
+
+- If with else
+if condition :
+  expression
+else :
+  expression
+
+z = 5
+if z % 2 == 0 :
+  print("z is even")
+else :
+  print("z is odd")
+
+---> z is odd
+
+- If with elif, and else
+
+if condition :
+  expression
+elif condition:
+  expression
+else :
+  expression
+
+z = 3
+
+if z % 2 == 0 :
+  print("z is divisible by 2")
+elif z % 3 == 0:
+  print("z is divisible by 3")
+else:
+  print("z is neither divisible by 2 nor by 3")
+
+---> z is divisible by 3
+
+
