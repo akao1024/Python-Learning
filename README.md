@@ -1,24 +1,38 @@
-# While Loop
+# for Loop
 
-* while loop - repeated if statement
-
-while condition:
+- for var in seq:
   expression
-1. Numerically calculating model
-2. "Repeating action until the condition is met"
-
-Ex. 
-Error starts at 50
-Divide error by 4 on every run
-Continue until error no longer > 1
-
-error = 50
-
-while error > 1:
-  error = error / 4
-  print(error)
   
----> 12.5
----> 3.125
----> 0.78125
+---> for each var in seq execute expression
 
+Ex. fam = [1.73, 1.68, 1.71, 1.89]
+for height in fam:
+  print(height)
+---> 1.73
+---> 1.68
+---> 1.71
+---> 1.89
+
+- enumerate
+If you also want to access the index information, so where the list element you're iterating over is located, you can use enumerate().
+Ex.
+fam = [1.73, 1.68, 1.71, 1.89]
+for index, height in enumerate(fam):
+  print("index " + str(index) + ":" + str(height))
+
+index 0: 1.73
+index 1: 1.68
+index 2: 1.71
+index 3: 1.89
+
+- Loop over string
+
+for c in "family":
+  print(c.capitalize())
+  
+F
+A
+M
+I
+L
+Y
