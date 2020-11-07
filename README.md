@@ -1,29 +1,37 @@
-# Random Numbers
+# Random Walk
 
-- Random Generators
+Known in Science
+1. Path of molecules
+2. Gambler's financial status
+
+- Heads or Tails
 import numpy as np
-np.random.rand()
----> 0.95355
-
 np.random.seed(123)
-np.random.rand()
----> 0.69646
+outcomes=[]
+for x in range(10):
+  coin = np.random.randint(0,2)
+  if coin == 0:
+    outcomes.append("heads")
+  else:
+    outcomes.append("tails")
+print(outcomes)
 
-*** np.random.seed() 
-We use this code when we want to create the same random float, but if we want to keep the same value, we should always execute the np.random.seed() first for each loop
+["heads", "tails","heads", "tails","heads", "tails","heads", "tails","heads", "tails"]
 
-np.random.seed(123)
-np.random.rand()
----> 0.69646
+- Heads or Tails: Random Walk
+import numpy as np
+np.randon.seed(123)
+tails=[0]
+for x in range(10):
+  coin = np.random.randint(0,2)
+  if coin == 0:
+    tails.append(tails[x]+coin)
+print(tails)
+
+[0, 0, 1, 1, 1, 1, 2, 2, 3, 3]
 
 
-np.random.seed(123)
-np.random.rand()
----> 0.69646
 
-np.random.seed(123)
-np.random.rand()
----> 0.69646
 
 
 
