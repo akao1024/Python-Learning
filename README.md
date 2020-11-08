@@ -1,21 +1,63 @@
-# Introducing DataFrames
+# Sorting and Subsetting
 
-- What's the point of pandas ?
-1. Data manipulation still track
-2. Data visualization still track
+- Sorting
 
-- Exploring A DataFrame
-1. dogs.head()
----> When you call it, it will list the first five rows from our dataframe
+dog.sort_values("weight_kg")
 
-2. dogs.info()
----> When you call it, it will list all the detailed information from the dataframe
+---> This will sort the values by column "weight_kg" from light to heavy
 
-3. dogs.shape()
----> When you call it, it will return how many rows and columns the dataframe has
+If we want to sort in descending order
 
-4. dogs.decribe()
----> When you call it, it will return statistics information back, like mean or median
+dog.sort_values("weight_kg", ascending=False)
 
-5. dogs.values()
----> When you call it, it will return all the values within it.
+---> This will sort the values by column "weight_kg" from heavy to light
+
+If we want sort by multiple variables
+
+dog.sort_values(["weight_kg", "height_cm"])
+
+---> This will sort our values by orders
+
+If we want to sort by multiple variables
+
+dog.sort_values(["weight_kg", "height_cm"], ascending=[True, False])
+
+---> This will sort our values by corresponding ascending orders
+
+- Subsetting Columns
+
+dogs["name"]
+
+---> This will print out the whole name column in dog dataframe
+
+If we want to subset multiple columns
+
+dogs[["breeds", "height_cm"]]
+
+---> This will print out the whole breed & height_cm column in dog dataframe
+
+If we want to subset those rows whose height_cm is more than 50
+
+dogs[dogs["height_cm"] > 50]
+
+---> This will print all those who fit the criteria
+
+If we want to subset based on text data
+
+dogs[dogs["breed"] == "Labrador"]
+
+---> This will print all those who fit the criteria
+
+- Subset based on multiple conditions
+
+is_lab = dogs["breed"] == "Labrador"
+is_brown = dogs["color"] == "Brown"
+dogs[is_lab & is_brown]
+
+---> This will print all those who fit the criteria
+
+
+*** Using .isin() to subset
+
+is_black_or_brown = dogs["color"].isin(["Black", "Brown"])
+dogs[is_black_or_brown]
