@@ -1,27 +1,27 @@
-# Grouped Summary Statistics
+# Pivot Tables
 
-1. Grouped Summaries
+1. Group by to pivot table
 
-If we want to learn differnet color dogs mean weight, we can use follows
+dogs.groupby("color")["weight_kg"].mean() = dogs.pivot_table(values="weight_kg", index="color")
 
-dogs[dogs["color"] == "Black"].["weight_kg"].mean()
-dogs[dogs["color"] == "Brown"].["weight_kg"].mean()
-dogs[dogs["color"] == "White"].["weight_kg"].mean()
-dogs[dogs["color"] == "Gray"].["weight_kg"].mean()
-dogs[dogs["color"] == "Tan"].["weight_kg"].mean()
+2. Different Statistics
 
-However, if we use above, it's kind of outdated, so we can use follows instead
+import numpy as np
 
-dogs.groupby("color")["weight_kg"].mean()
+dogs.pivot_table(values="weight_kg", index="color", aggfunc=np.median)
 
-2. Multiple Grouped Summaries
+3. Multiple Statistics
 
-dogs.groupby("color")["weight_kg"].agg([min, max, sum])
+dogs.pivot_table(values="weight_kg", index="color", aggfunc=[np.mean, np.median])
 
-3. Group by Multiple variables
+4. Pivot on Two Variable
 
-dogs.groupby(["color", "breed"])["weight_kg"].mean()
+dogs.groupby(["color", "breed"])["weight_kg"].mean() = dogs.pivot_table(values="weight_kg", index="color", columns="breed")
 
-4. Many Groups, many summaries
+5. Filling Missing Values with 0 
 
-dogs.groupby(["color", "breed"])[["weight_kg", "height_cm"]].mean()
+dogs.pivot_table(values="weight_kg", index="color", columns="breed", fill_value=0)
+
+6. Summarizing with Pivot Tables
+
+dogs.pivot_table(values="weight_kg", index="color", columns="breed", fill_value=0, margins=True)
