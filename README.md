@@ -1,31 +1,29 @@
-# Summary Statistics
+# Counting
 
-- Summarizing Numerical Data
+Let's say we have df named as vet_visits
 
-1. types :
-.median(), .mode(), .min(), max(), .var(), std(), .sum(), .quatile()
+1. Dropping duolicate names
 
-dogs["height_cm"].mean()
+vet_visits.drop_duplicates(subset="name")
+---> This will use "name" column to help us drop the duplicates
 
-2. The .agg() method
 
-ex. def pct30(column):
-        return column.quantile(0.3)
-dogs["height_cm"].agg(pct30)
+2. Dropping duplicate parins
 
-3. Summaries on multiple columns
-dogs[["weight_kg", "height_cm"]].agg(pct30)
+But, what if we have dogs with same name but different breeds?
+we can use this instead
 
-4. Multiple Summaries
-def pct40(column):
-    return column.quantile(0.4)
+unique_dogs = vet_visits.drop_duplicates(subset=["name", "breed"])
 
-dogs["height_cm"].agg([pct30, pct40])
+3. Value counts
 
-5. Cumulative Sum
-dogs["height_cm"].cumsum()
+unique_dogs["breed"].value_counts()
+---> This will count the vlaues by breeds
 
-6. Cumulative Statistics
-.cummax()
-.cummin()
-.cumprod()
+unique_dogs["breed"].value_counts(sort=True)
+---> This will help us count but also sort
+
+4. Proportions
+unique_dogs["breed"].value_counts(normalize=True)
+---> This will give us the proportion of the distribution of breed column
+
