@@ -1,29 +1,27 @@
-# Counting
+# Grouped Summary Statistics
 
-Let's say we have df named as vet_visits
+1. Grouped Summaries
 
-1. Dropping duolicate names
+If we want to learn differnet color dogs mean weight, we can use follows
 
-vet_visits.drop_duplicates(subset="name")
----> This will use "name" column to help us drop the duplicates
+dogs[dogs["color"] == "Black"].["weight_kg"].mean()
+dogs[dogs["color"] == "Brown"].["weight_kg"].mean()
+dogs[dogs["color"] == "White"].["weight_kg"].mean()
+dogs[dogs["color"] == "Gray"].["weight_kg"].mean()
+dogs[dogs["color"] == "Tan"].["weight_kg"].mean()
 
+However, if we use above, it's kind of outdated, so we can use follows instead
 
-2. Dropping duplicate parins
+dogs.groupby("color")["weight_kg"].mean()
 
-But, what if we have dogs with same name but different breeds?
-we can use this instead
+2. Multiple Grouped Summaries
 
-unique_dogs = vet_visits.drop_duplicates(subset=["name", "breed"])
+dogs.groupby("color")["weight_kg"].agg([min, max, sum])
 
-3. Value counts
+3. Group by Multiple variables
 
-unique_dogs["breed"].value_counts()
----> This will count the vlaues by breeds
+dogs.groupby(["color", "breed"])["weight_kg"].mean()
 
-unique_dogs["breed"].value_counts(sort=True)
----> This will help us count but also sort
+4. Many Groups, many summaries
 
-4. Proportions
-unique_dogs["breed"].value_counts(normalize=True)
----> This will give us the proportion of the distribution of breed column
-
+dogs.groupby(["color", "breed"])[["weight_kg", "height_cm"]].mean()
