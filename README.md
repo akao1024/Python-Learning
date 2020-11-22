@@ -1,4 +1,4 @@
-# Explicit Indexes
+# Slicing and Subsetting with .loc and .iloc
 
 print(dogs) 
 
