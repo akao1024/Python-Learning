@@ -59,7 +59,7 @@ dogs_ind.reset_index(drop=True)
 
 - Subsetting with indexes
 
-dogs[dogs["name"]].isin(["Bella", "Stella"])
+dogs[dogs["name"]].isin(["Bella", "Stella"])]
 
 name      breed       color     height_cm     weight_kg    
 Bella     Labradour   Brown     56            25
@@ -111,6 +111,11 @@ dogs_ind3.sort_index()
 
 - Cotrolling sort_index
 dogs_ind3.sort_index(level=["color", "breed"], ascending=[True, False])
+
+- Two Problems We have Now
+1. index values are just data
+2. indexes violate"tidy data" principles
+3. You need to learn two syntaxes
 
 
 
