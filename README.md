@@ -120,3 +120,5 @@ print(dogs.iloc[2:5, 1:4])
 2   Chow Chow   Bown      46            
 3   Schnauzer   Gray      49            
 4   Labrador    Black     59            
+
+if we use iloc to slice the value, the final value wont be returned
