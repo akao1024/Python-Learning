@@ -1,34 +1,60 @@
 
-# Hello Python!
+# Visualizing Your Data
 
-1. IPython Shell
+- Histogram
+import matploylib.pyplot as plt
+dog_pack["height_cm"].hist()
+plt.show()
 
-Mostly used to execute commands
+- Different Bins
 
-2. Python Script
+dog.pack["height_cm"].hist(bins=20)
+plt.show()
 
-- Text files -.py
-- List of Python Commands
+dog_pack["height_cm"].hist(bins=5)
+plt.show()
 
-3. Any Comments
+- Bar Plots
+avg_weight_by_breed = dog_pack.groupby("breed)["weight"].mean()
+print(avg_weight_by_breed)
 
-Used # to add comments within python interface
-Codes added behind # will not be run by as Python code, so it will not influence your result
+- Bar Plots 2
 
-# This is a comment if you run on Python
+avg_weight_by_breed.plot(kind="bar")
+plt.show()
 
-4. Python as a calculator
+avg_weight_by_breed.plot(kind="bar", title="Mean Weight by Dog Breed")
+plt.show()
 
-- print(3*5) --> 15
-- print(3+5) --> 8
-- print(3-5) --> -2
-- print(3/5) --> 0.6
+- Line Plots
+sully.plot(x="date", y="weight_kg", kind="line")
+plt.show()
 
-Exponential: 
-print(4**2) --> 16
-Modulo:
-p.s. The operator returns the remainder of the division of the number to the left by the number on its right
-print(18 % 7) --> 4
-print(11 % 2) --> 1
+- Rotating Axis Labels
 
+sully.plot(x="date", y="weight_kg", kind="line", rot=45)
+plt.show()
+
+- Scatter Plots
+
+dog_pack.plot(x="height_cm", y="weight_kg", kind="scatter")
+plt.show()
+
+- Layering Plots
+
+dog_pack[dog_pack["sex] == "F"]["height_cm"].hist()
+dog_pack[dog_pack["sex] == "M"]["height_cm"].hist()
+plt.show()
+
+- Add a Legend
+dog_pack[dog_pack["sex] == "F"]["height_cm"].hist()
+dog_pack[dog_pack["sex] == "M"]["height_cm"].hist()
+plt.legend(["F","M"])
+plt.show()
+
+- Transparency
+dog_pack[dog_pack["sex] == "F"]["height_cm"].hist(alpha=0.7)
+dog_pack[dog_pack["sex] == "M"]["height_cm"].hist(alpha=0.7)
+plt.legend(["F","M"])
+plt.show()
 
