@@ -1,60 +1,33 @@
 
-# Visualizing Your Data
+# Missing Values
 
-- Histogram
-import matploylib.pyplot as plt
-dog_pack["height_cm"].hist()
+In pandas, we use "NaN" to inform you the data is missing
+
+- Detecting Missing Values
+dogs.isna()
+
+- Detecting any missing values
+dogs.isna().any()
+
+- Counting missing values
+
+dog.isna().sum()
+
+- Plotting missing values
+
+import matplotlib.pyplot as plt
+dog.isna().sum.plot(kind="bar")
 plt.show()
 
-- Different Bins
+- Removing missing values
 
-dog.pack["height_cm"].hist(bins=20)
-plt.show()
+dogs.dropna()
 
-dog_pack["height_cm"].hist(bins=5)
-plt.show()
+- Replacing missing values
+dogs.fillna(0)
 
-- Bar Plots
-avg_weight_by_breed = dog_pack.groupby("breed)["weight"].mean()
-print(avg_weight_by_breed)
 
-- Bar Plots 2
 
-avg_weight_by_breed.plot(kind="bar")
-plt.show()
 
-avg_weight_by_breed.plot(kind="bar", title="Mean Weight by Dog Breed")
-plt.show()
 
-- Line Plots
-sully.plot(x="date", y="weight_kg", kind="line")
-plt.show()
-
-- Rotating Axis Labels
-
-sully.plot(x="date", y="weight_kg", kind="line", rot=45)
-plt.show()
-
-- Scatter Plots
-
-dog_pack.plot(x="height_cm", y="weight_kg", kind="scatter")
-plt.show()
-
-- Layering Plots
-
-dog_pack[dog_pack["sex] == "F"]["height_cm"].hist()
-dog_pack[dog_pack["sex] == "M"]["height_cm"].hist()
-plt.show()
-
-- Add a Legend
-dog_pack[dog_pack["sex] == "F"]["height_cm"].hist()
-dog_pack[dog_pack["sex] == "M"]["height_cm"].hist()
-plt.legend(["F","M"])
-plt.show()
-
-- Transparency
-dog_pack[dog_pack["sex] == "F"]["height_cm"].hist(alpha=0.7)
-dog_pack[dog_pack["sex] == "M"]["height_cm"].hist(alpha=0.7)
-plt.legend(["F","M"])
-plt.show()
 
