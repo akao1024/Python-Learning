@@ -1,20 +1,11 @@
-# Inner Join
+# One to Many Relationships
 
-We have two datafram which are "ward and "census"
+- One to One
+Every row in the left table is related to only one row in the right table
 
-Both dataframe have the same column which is called as "ward"
+- One to Many
+Every row in the left table is related to one or more rows in the right table
 
-- Inner Join
 
-ward_census = ward.merge(census, on="ward")
-print(ward_census)
 
-in the above, we successfully merge the two dataset we have
-
-If we want to merge two different dataframe, those two dataframes should at least have one common column for us to combine
-
-- Suffixes
-
-ward_census = ward.merge(census, on="ward", suffix=("_ward", "_cen"))
-print(ward_census.head())
 
