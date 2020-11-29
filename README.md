@@ -1,11 +1,9 @@
-# One to Many Relationships
+# Merging Multiple DataFrame
 
-- One to One
-Every row in the left table is related to only one row in the right table
+If we have three tables we would like to merge together, we should see as follows
 
-- One to Many
-Every row in the left table is related to one or more rows in the right table
+grant/ license/ ward
 
-
-
-
+grants_licenses_ward = grants.merge(licenses, on=['address', 'zip'] \
+                              .merge(wards, on='ward', suffixes=('_bus', '_ward'))
+grants_licenses_ward.head()
