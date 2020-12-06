@@ -1,50 +1,54 @@
 
-# Concatenation Basics
+# Verifying Integrity
 
-- Concatenate two tables vertically
+- Let's Check Our Data
+1. Possible merging issue:
 
-Pandas .concat() method can concatenate both vertical and horizontal. 
-axis=0, vertical
+a. Unintentional 'one-to-many' relationship
+b. Unintentional 'many-to-many' relationship
 
-- Basic Concatenation
-1. 3 different tables
-2. Same column names
-3. Table variable names:
-a. inv_jan
-b. inv_feb
-c. inv_mar
+2. Possible concatenating issue:
 
-pd.concat([inv_jan, inv_feb, inv_mar])
+a. Duplicate records possibly unintentionally introduced
 
-- Ignoring the index
-pd.concat([inv_jan, inv_feb, inv_mar], ignore_index=True)
+- Validating Merges
+.merge(validate=None)
+1. Check if merge is of specified type:
+one-to-one
+one-to-many
+many-to-one
+many-to-many
 
----> The index order of the concatenation will start from 0
+- Merge Validate : One-to-One
 
-- Setting Labels to Original Tables
-pd.concat([inv_jan, inv_feb, inv_mar], ignore_index=False, key=['jan', 'feb', 'mar'])
+tracks.merge(specs, on='tid', validate='one-to-one')
 
-Those keys will be concatenated infront of the indexes
+---> Returns Errors, which means the validation type is not one to one type
 
-- Concatenate Table with Different Column Names
+tracks.merge(specs, on='tid', validate='one-to-many')
 
-pd.concat([inv_jan, inv_feb2], sort=True)
+---> Returns values
 
----> We can see that even though two table with different column names, this way can still concatenate them together
+- Verifying Concatenations
+.concat(verify_integrity=False)
+a. Check whether the new concatenated index contains duplicates
+b. Default value is False
 
-However, if we set the join equals to 'inner', then it will only concatenate columns intersections
+- Verifying Concatenation: Example
+pd.concate([inv_feb, inv_mar], verify_integrity=True)
 
-pd.concat([inv_jan, inv_feb2], join='inner')
+---> Returns Errors, which means there are duplicates within the concatenations
 
-- Using Append Method
-.append()
-1. simplified version of concat() method
-2. Supports: ignore_index and sort
-3. Does not support: key and join
-4. Always join = outer
+pd.concate([inv_feb, inv_mar], verify_integrity=False)
 
-- Append The Tables
-inv_jan.append([inv_feb, inv_mar], ignore_index=True, sort=True)
+- Why Verify Integrity and What to Do
+Why:
+Real world data is not often clean
+
+What to do:
+a. Fix incorrect data
+b. Drop duplicate rows
+
 
 
 
