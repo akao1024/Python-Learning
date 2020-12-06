@@ -34,7 +34,7 @@ pd.concat([inv_jan, inv_feb2], sort=True)
 
 However, if we set the join equals to 'inner', then it will only concatenate columns intersections
 
-pd.concat([inv_jan, inv_feb2], join=inner)
+pd.concat([inv_jan, inv_feb2], join='inner')
 
 - Using Append Method
 .append()
