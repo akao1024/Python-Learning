@@ -14,18 +14,18 @@ a. Duplicate records possibly unintentionally introduced
 - Validating Merges
 .merge(validate=None)
 1. Check if merge is of specified type:
-one-to-one
-one-to-many
-many-to-one
-many-to-many
+one_to_one
+one_to_many
+many_to_one
+many_to_many
 
 - Merge Validate : One-to-One
 
-tracks.merge(specs, on='tid', validate='one-to-one')
+tracks.merge(specs, on='tid', validate='one_to_one')
 
 ---> Returns Errors, which means the validation type is not one to one type
 
-tracks.merge(specs, on='tid', validate='one-to-many')
+tracks.merge(specs, on='tid', validate='one_to_many')
 
 ---> Returns values
 
