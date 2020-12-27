@@ -1,34 +1,31 @@
 
-# Hello Python!
+# Scatter Plots
 
-1. IPython Shell
+- Scatter Plots Introduction
 
-Mostly used to execute commands
+fig, ax = plt.subplots()
+ax.scatter(climate_change["co2"], climate_change["relative_temp"])
+ax.set_xlabel("CO2(ppm)")
+ax.set_ylabel("Relative Temperature(Celsius)")
+plt.show()
 
-2. Python Script
+- Customizing scatter plots
 
-- Text files -.py
-- List of Python Commands
+eighties = climate_change["1980-01-01":"1989-12-31"]
+nineties = climate_change["1990-01-01":"1999-12-31"]
+fig, ax = plt.subplots()
+ax.scatter(eighties["co2"], eighties["relative_temp"], color="red", label="eighties")
+ax.scatter(nineties["co2"], nineties["relative_temp"], color="blue", label="nineties")
+ax.legend()
 
-3. Any Comments
+ax.set_xlabel("CO2(ppm)")
+ax.set_ylabel("Relative Temperature(Celsius)")
+plt.show()
 
-Used # to add comments within python interface
-Codes added behind # will not be run by as Python code, so it will not influence your result
+- Encoding third variable by color
 
-# This is a comment if you run on Python
-
-4. Python as a calculator
-
-- print(3*5) --> 15
-- print(3+5) --> 8
-- print(3-5) --> -2
-- print(3/5) --> 0.6
-
-Exponential: 
-print(4**2) --> 16
-Modulo:
-p.s. The operator returns the remainder of the division of the number to the left by the number on its right
-print(18 % 7) --> 4
-print(11 % 2) --> 1
-
-
+fig, ax = plt.subplots()
+ax.scatter(climate_change["co2"], climate_change["relative_temp"], c=climate_change.index)
+ax.set_xlabel("CO2(ppm)")
+ax.set_ylabel("Relative Temperature(Celsius)")
+plt.show()
