@@ -1,34 +1,65 @@
 
-# Hello Python!
+# Creating Histograms
 
-1. IPython Shell
+- A bar chart again
 
-Mostly used to execute commands
+fig, ax = plt.subplots()
+ax.bar("Rowing", mens_rowing["Height"].mean())
+ax.bar("Gymnastics", mens_gymnastic["Height"].mean())
+ax.set_ylabel("Height(cm)")
+plt.show()
 
-2. Python Script
+- Histograms Introduction
+fig, ax = plt.subplots()
+ax.hist(mens_rowing["Height"])
+ax.hist(mens_gymnastic["Height"])
+ax.set_xlabel("Height(cm)")
+ax.set_ylabel("# of observations")
+plt.show()
 
-- Text files -.py
-- List of Python Commands
+- Labels are needed
 
-3. Any Comments
+fig, ax = plt.subplots()
+ax.hist(mens_rowing["Height"], label="Rowing")
+ax.hist(mens_gymnastic["Height"], label="Gymnastics")
+ax.set_xlabel("Height(cm)")
+ax.set_ylabel("# of observations")
+ax.legend()
+plt.show()
 
-Used # to add comments within python interface
-Codes added behind # will not be run by as Python code, so it will not influence your result
+- Setting the number of bins
 
-# This is a comment if you run on Python
+fig, ax = plt.subplots()
+ax.hist(mens_rowing["Height"], label="Rowing", bins=5)
+ax.hist(mens_gymnastic["Height"], label="Gymnastics", bins=5)
+ax.set_xlabel("Height(cm)")
+ax.set_ylabel("# of observations")
+ax.legend()
+plt.show()
 
-4. Python as a calculator
+- Setting bin boundaries
 
-- print(3*5) --> 15
-- print(3+5) --> 8
-- print(3-5) --> -2
-- print(3/5) --> 0.6
+ax.hist(mens_rowing["Height"], label="Rowing", 
+        bins=[150, 160, 170, 180, 190, 200, 210])
+ax.hist(mens_gymnastic["Height"], label="Gymnastics", 
+        bins=[150, 160, 170, 180, 190, 200, 210])
+ax.set_xlabel("Height(cm)")
+ax.set_ylabel("# of observations")
+ax.legend()
+plt.show()
 
-Exponential: 
-print(4**2) --> 16
-Modulo:
-p.s. The operator returns the remainder of the division of the number to the left by the number on its right
-print(18 % 7) --> 4
-print(11 % 2) --> 1
+- Transparency
+
+ax.hist(mens_rowing["Height"], label="Rowing", 
+        bins=[150, 160, 170, 180, 190, 200, 210],
+        histtype="step")
+ax.hist(mens_gymnastic["Height"], label="Gymnastics", 
+        bins=[150, 160, 170, 180, 190, 200, 210],
+        histtype="step")
+
+ax.set_xlabel("Height(cm)")
+ax.set_ylabel("# of observations")
+ax.legend()
+plt.show()
 
 
