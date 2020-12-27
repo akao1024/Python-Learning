@@ -1,34 +1,33 @@
 
-# Hello Python!
+# Statistical Plotting
 
-1. IPython Shell
+- Add error bars to bar charts
+fig, ax = plt.subplots()
 
-Mostly used to execute commands
+ax.bar("Rowing", mens_rowing["Height"], yerr=mens_rowing["Height"].std())
+ax.bar("Gymnastics", mens_gymnastics["Height"], yerr=mens_gymnastics["Height"].std())
 
-2. Python Script
+ax.set_ylabel("Height(cm)")
+plt.show()
 
-- Text files -.py
-- List of Python Commands
+- Adding error bars to plots
 
-3. Any Comments
+fig, ax = plt.subplots()
+ax.errorbar(seattle_weather["MONTH"], seattle_weather["MLY-TAVG-NORMAL"], seattle_weather["ML-TAVG-STDDEV"])
+ax.errorbar(austin_weather["MONTH"], austin_weather["MLY-TAVG-NORMAL"], austin_weather["ML-TAVG-STDDEV"])
 
-Used # to add comments within python interface
-Codes added behind # will not be run by as Python code, so it will not influence your result
+ax.set_ylabel("Temperature(Fahrenheit)")
+plt.show()
 
-# This is a comment if you run on Python
+- Adding boxplots
 
-4. Python as a calculator
+fig, ax = plt.subplots()
+ax.boxplot([mens_rowing["Height"], mens_gymnastics["Height"]])
+ax.set_xticklabels(["Rowing", "Gymnastics"])
+ax.set_ylabel("Height(cm)")
 
-- print(3*5) --> 15
-- print(3+5) --> 8
-- print(3-5) --> -2
-- print(3/5) --> 0.6
+plt.show()
 
-Exponential: 
-print(4**2) --> 16
-Modulo:
-p.s. The operator returns the remainder of the division of the number to the left by the number on its right
-print(18 % 7) --> 4
-print(11 % 2) --> 1
+
 
 
