@@ -1,34 +1,21 @@
 
-# Hello Python!
+# Automating Figures from Data
 
-1. IPython Shell
+- Getting unique values of a column
 
-Mostly used to execute commands
+sports = summer_2016_medals["Sport"].unique()
+print(sports)
 
-2. Python Script
 
-- Text files -.py
-- List of Python Commands
+- Bar-chart of heights for all sports
 
-3. Any Comments
+fig, ax = plt.subplots()
 
-Used # to add comments within python interface
-Codes added behind # will not be run by as Python code, so it will not influence your result
+for sport in sports:
+  sport_df = summer_2016_medals[summer_2016_medals["Sport"] == sport]
+  ax.bar(sport, sport_df["Height"].mean(), yerr=sport_df["Height"].std())
+ax.set_ylabel("Height(cm)")
+ax.set_xticklabel(sports, rotation=90)
 
-# This is a comment if you run on Python
-
-4. Python as a calculator
-
-- print(3*5) --> 15
-- print(3+5) --> 8
-- print(3-5) --> -2
-- print(3/5) --> 0.6
-
-Exponential: 
-print(4**2) --> 16
-Modulo:
-p.s. The operator returns the remainder of the division of the number to the left by the number on its right
-print(18 % 7) --> 4
-print(11 % 2) --> 1
-
+plt.show()
 
