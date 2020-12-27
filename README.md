@@ -1,34 +1,52 @@
 
-# Hello Python!
+# Quantitive Comparisons - Bar Charts
 
-1. IPython Shell
+- We have a csv file with different countries olympic medals numbers
 
-Mostly used to execute commands
+* Let's Visualize the Data
 
-2. Python Script
+medals = pd.read_csv('medals_by_country_2016.csv', index_col=0)
+fig, ax = plt.subplots()
+ax.bar(medals.index, medals["Gold"])
+plt.show()
 
-- Text files -.py
-- List of Python Commands
+- Interlude: Rotate the tick labels
 
-3. Any Comments
+fig, ax = plt.subplots()
+ax.bar(medals.index, medals["Gold"])
+ax.set_xticklabels(medals.index, rotation=90)
+ax.set_ylabel("Number of medals")
+plt.show()
 
-Used # to add comments within python interface
-Codes added behind # will not be run by as Python code, so it will not influence your result
+- Visualizing the other medals
 
-# This is a comment if you run on Python
+fig, ax = plt.subplots()
+ax.bar(medals.index, medals["Gold"])
+ax.bar(medals.index, medals["Silver"], bottom=medals["Gold"])
+ax.set_xticklabels(medals.index, rotation=90)
+ax.set_ylabel("Number of medals")
+plt.show()
 
-4. Python as a calculator
+- Visualizing all three
+fig, ax = plt.subplots()
+ax.bar(medals.index, medals["Gold"])
+ax.bar(medals.index, medals["Silver"], bottom=medals["Gold"])
+ax.bar(medals.index, medals["Bronze"], bottom=medals["Gold"]+ medals["Silver"])
 
-- print(3*5) --> 15
-- print(3+5) --> 8
-- print(3-5) --> -2
-- print(3/5) --> 0.6
+ax.set_xticklabels(medals.index, rotation=90)
+ax.set_ylabel("Number of medals")
+plt.show()
 
-Exponential: 
-print(4**2) --> 16
-Modulo:
-p.s. The operator returns the remainder of the division of the number to the left by the number on its right
-print(18 % 7) --> 4
-print(11 % 2) --> 1
+- Adding a legend
+fig, ax = plt.subplots()
+ax.bar(medals.index, medals["Gold"])
+ax.bar(medals.index, medals["Silver"], bottom=medals["Gold"])
+ax.bar(medals.index, medals["Bronze"], bottom=medals["Gold"]+ medals["Silver"])
 
+ax.set_xticklabels(medals.index, rotation=90)
+ax.set_ylabel("Number of medals")
+ax.legend()
+plt.show()
+
+will enclose snapshots within this branch
 
