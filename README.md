@@ -1,34 +1,19 @@
 
-# Hello Python!
+# Introduction to Seaborn
 
-1. IPython Shell
+- What is Seaborn
+1. Python data visualization library
+2. Easily create the most common types of plots
 
-Mostly used to execute commands
+- Why is it useful ?
 
-2. Python Script
+Gather Data ---> Transform & Clean ---> Explore ---> Analyze & Build Models ---> Communicate Results
 
-- Text files -.py
-- List of Python Commands
+- Getting Started
 
-3. Any Comments
+import seaborn as sns
+import matplotlib.pyplot as plt
 
-Used # to add comments within python interface
-Codes added behind # will not be run by as Python code, so it will not influence your result
 
-# This is a comment if you run on Python
-
-4. Python as a calculator
-
-- print(3*5) --> 15
-- print(3+5) --> 8
-- print(3-5) --> -2
-- print(3/5) --> 0.6
-
-Exponential: 
-print(4**2) --> 16
-Modulo:
-p.s. The operator returns the remainder of the division of the number to the left by the number on its right
-print(18 % 7) --> 4
-print(11 % 2) --> 1
 
 
