@@ -1,18 +1,14 @@
 
-# Introduction to Seaborn
+# Using Pandas with Seaborn
 
-- What is Seaborn
-1. Python data visualization library
-2. Easily create the most common types of plots
 
-- Why is it useful ?
+- What is pandas ?
+1. python library for data analysis
+2. easily read datasets from csv, txt, and other types of files
+3. datasets take the form of of DataFrame objects
 
-Gather Data ---> Transform & Clean ---> Explore ---> Analyze & Build Models ---> Communicate Results
 
-- Getting Started
 
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 
 
