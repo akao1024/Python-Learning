@@ -1,34 +1,28 @@
 
-# Hello Python!
+# Changing plot style and color
 
-1. IPython Shell
+- Why Customize
+1. Personal Preference
+2. Improve Readability
+3. Guide Interpretation
 
-Mostly used to execute commands
+- Changing Fugure Style
+1. Figure style includes background and axes
+2. Preset options: "white", "dark", "whitegrid", "darkgrid", "tick"
+3. sns.set_style()
 
-2. Python Script
+- Changing The Palette
+1. Figure palette changes the color of the main elements of the plot
+2. sns.set_palette()
+3. Use preset palette or create a custom palette
 
-- Text files -.py
-- List of Python Commands
+- Changing The Scale
+1. Figure context changes the scale of the plot elements and labels
+2. sns.set_context()
+3. Smallest to largest: "paper", "notebook", "talk", "poster"
 
-3. Any Comments
 
-Used # to add comments within python interface
-Codes added behind # will not be run by as Python code, so it will not influence your result
 
-# This is a comment if you run on Python
 
-4. Python as a calculator
-
-- print(3*5) --> 15
-- print(3+5) --> 8
-- print(3-5) --> -2
-- print(3/5) --> 0.6
-
-Exponential: 
-print(4**2) --> 16
-Modulo:
-p.s. The operator returns the remainder of the division of the number to the left by the number on its right
-print(18 % 7) --> 4
-print(11 % 2) --> 1
 
 
