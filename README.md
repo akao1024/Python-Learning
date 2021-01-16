@@ -1,34 +1,19 @@
 
-# Hello Python!
+# User-definded functions
 
-1. IPython Shell
+- Learning:
+1. Define functions without parameters
+2. Define functions with on parameter
+3. Define functions that return a value
+4. Later: multiple arguments, multiple return values
 
-Mostly used to execute commands
+- Docstrings
+1. Docstring describes what your function does
+2. Serve as documentation for your function
+3. Placed in the immediate line after the function header
+4. In between triple double quotes
 
-2. Python Script
 
-- Text files -.py
-- List of Python Commands
 
-3. Any Comments
-
-Used # to add comments within python interface
-Codes added behind # will not be run by as Python code, so it will not influence your result
-
-# This is a comment if you run on Python
-
-4. Python as a calculator
-
-- print(3*5) --> 15
-- print(3+5) --> 8
-- print(3-5) --> -2
-- print(3/5) --> 0.6
-
-Exponential: 
-print(4**2) --> 16
-Modulo:
-p.s. The operator returns the remainder of the division of the number to the left by the number on its right
-print(18 % 7) --> 4
-print(11 % 2) --> 1
 
 
