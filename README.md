@@ -1,17 +1,23 @@
 
-# User-definded functions
+# Multiple parameters and return values
 
-- Learning:
-1. Define functions without parameters
-2. Define functions with on parameter
-3. Define functions that return a value
-4. Later: multiple arguments, multiple return values
+- Multiple function parameters
+1. accept more than one parameter
+2. call function: # of arguments = # of parameters
 
-- Docstrings
-1. Docstring describes what your function does
-2. Serve as documentation for your function
-3. Placed in the immediate line after the function header
-4. In between triple double quotes
+- A quick jump into tuples
+1. Make functions return multiple values: Tuples
+2. Tuples:
+a. Like a list - can contain multiple values
+b. Immutable - cant modify values
+c. Constructed using parentheses()
+
+- Unpacking tuples
+
+- Accessing tuple elements
+
+- Returning multiple values
+
 
 
 
