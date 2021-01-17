@@ -1,16 +1,12 @@
 
-# Lambda function
+# Introduction to error handling
 
-- Lambda functions
+- Errors and exceptions
+1. Exceptions - caught during execution
+2. Catch exceptions with try-except clause:
+a. Runs the code following try
+b. If there's an exception, run the code following except
 
-raise_to_power = lambda x, y: x ** y
-
-raise_to_power(2, 3)
----> 8
-
-- Anonymous functions
-1. Function map takes two arguments: map(func, seq)
-2. map() applies function to ALL elements in sequence
 
 
 
