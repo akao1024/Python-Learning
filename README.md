@@ -1,14 +1,12 @@
 
-# Introduction to Iterators
+# Using iterators to load large files into memory
 
-- Iterators v.s. Iterables
-1. Iterable
-a. i.e. lists, strings, dictionaries, file connections
-b. An object with an associated iter() method
-c. Applying iter() to an iterable creates an iterator
+- Loading data in chunks
+1. There can be too much data to hold in memory
+2. Solution: load data in chunks
+3. Pandas function: read_csv()
+- Specify the chunk chunk_size()
 
-2. Iterator
-a. Produces next value with next()
 
 
 
