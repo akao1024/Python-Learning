@@ -1,14 +1,18 @@
 
-# Introduction to Iterators
+# Using the distribution plot
 
-- Iterators v.s. Iterables
-1. Iterable
-a. i.e. lists, strings, dictionaries, file connections
-b. An object with an associated iter() method
-c. Applying iter() to an iterable creates an iterator
+- Creating a histogram
+a. Distploy function has multiple optional arguments
+b. In order to plot a simple histogram, you can disable the kde and specify the number of bins to use
 
-2. Iterator
-a. Produces next value with next()
+- Alternative data distribution 
+a. A rug plot is an alternative way to view the distribution of data
+b. A kde curve and rug plot can be combined
+
+- Further customizations
+a. The distplot function uses several functions including kdeplot and rugplot
+b. It is possible to further customize a plot by passing arugments to the underlying function
+
 
 
 
