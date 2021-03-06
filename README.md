@@ -1,14 +1,13 @@
 
-# Introduction to Iterators
+# Using pairgrid and pairplot
 
-- Iterators v.s. Iterables
-1. Iterable
-a. i.e. lists, strings, dictionaries, file connections
-b. An object with an associated iter() method
-c. Applying iter() to an iterable creates an iterator
+- Pairwise relationship
+a. pairgrid shows pairwise relationship between data elements
 
-2. Iterator
-a. Produces next value with next()
+- Creating a pairgrid
+a. 
+
+
 
 
 
